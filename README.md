@@ -42,13 +42,13 @@ aws cloudformation create-stack --region us-west-2 --stack-name autoPeople --tem
 
 STEP 5: To ssh into the provisioned server
 =====================
-Note: wait for the server to be fully provisioned on AWS,
+Note: wait for the server to be fully provisioned on AWS then,
 
 ssh sysadmin@ipaddress
 
-Start nginx server if not running or check status 
+start nginx server if not running or check status 
 
-Copy and paste your public ipaddress to the browser. 
+copy and paste your public ipaddress to the browser. 
 
 
 
