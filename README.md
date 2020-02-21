@@ -11,9 +11,8 @@ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
 
 
-STEP 2: Add your Access Key ID and Secret Access Key to ~/.aws/config using this format:
+STEP 2: configure aws cli by running "aws configure" command
 ===============================================================================
-[default]
 
 aws_access_key_id = <access key id>
   
@@ -21,30 +20,35 @@ aws_secret_access_key = <secret access key>
   
 region = us-west-2
 
+output = json
 
 
 
-STEP 3: Protect the config file:
-=======================
-chmod 600 ~/.aws/config
 
-
-
-STEP 4: Clone the cloud formation script by running the following command
+STEP 3: Clone the cloud formation script by running the following command
 =========================================================================
 cd /
 
-git clone  https://github.com/Kwara1989/Cloudformation.git
+sudo git clone  https://github.com/Kwara1989/Cloudformation.git
 
 cd Cloudformation
 
 
 
-STEP 5: To launch  stack. RUN THE cf_auto.template SCRIPT LIKE THIS
+STEP 4: To launch  stack. RUN THE cf_auto.template SCRIPT LIKE THIS
 =====================
-aws cloudformation create-stack --region us-west-2b --stack-name autoPeople --template-body
+aws cloudformation create-stack --region us-west-2 --stack-name autoPeople --template-body file:///Cloudformation/cf_auto.template 
 
-file:///Cloudformation/cf_auto.template 
+
+STEP 5: To ssh into the provisioned server
+=====================
+Note: wait for the server to be fully provisioned on AWS,
+
+ssh sysadmin@ipaddress
+
+Start nginx server if not running or check status 
+
+Copy and paste your public ipaddress to the browser. 
 
 
 
